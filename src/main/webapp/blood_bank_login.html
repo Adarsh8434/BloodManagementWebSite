@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Bank Login</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Add your own custom CSS if needed -->
+</head>
+<body>
+    <div class="container">
+        <h1>Blood Bank Login</h1>
+        <!-- Your login form goes here -->
+        <form id="bloodBankLoginForm" action="BBLogin" method="post">
+            <label for="BloodBankName">Username:</label>
+            <input type="text" id="BloodBankName" name="BloodBankName" placeholder="Enter Blood Bank Name" required>
+            <br>
+            <label for="LicenseNumber">Password:</label>
+            <input type="LicenseNumber" id="LicenseNumber" name="LicenseNumber" placeholder="License Number" required>
+            <br>
+            <button type="submit">Login</button>
+        </form>
+        <p>Not yet registered? <a href="bbankregistration.html">Register as Blood Bank</a></p>
+    </div>
+
+    <script>
+        // Sample function to simulate successful login
+     //   function simulateLoginSuccess() {
+       //   const form = document.getElementById('bloodBankLoginForm');
+         // form.addEventListener('submit', function (event) {
+           // event.preventDefault(); // Prevent form submission (to demonstrate redirect only)
+           // redirectToBloodBankDashboard();
+         // });
+     //   }
+
+    //    function redirectToBloodBankDashboard() {
+     //       window.location.href = 'blood bank dashboard.html';
+     //   }
+
+        // Simulate successful login (remove this function in a real application and implement actual authentication)
+        simulateLoginSuccess();
+    </script>
+</body>
+</html>

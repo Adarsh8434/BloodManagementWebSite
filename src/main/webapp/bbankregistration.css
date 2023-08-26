@@ -1,0 +1,140 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+h2 {
+    text-align: center;
+}
+fieldset{
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+/* Form styles */
+form {
+    display: grid;
+    grid-gap: 10px;
+}
+
+label{
+    font-weight: normal;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    margin-right: 20px;;
+}
+
+textarea {
+    resize: vertical;
+}
+
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+/* Submit button styles */
+button[type="submit"],
+button[type="reset"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover,
+button[type="reset"]:hover {
+    background-color: #45a049;
+}
+
+button[type="submit"]:focus,
+button[type="reset"]:focus {
+    outline: none;
+}
+
+/* Form layout styles */
+.form-group-button {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 400px; /* Adjust the width as needed */
+}
+
+.form-group-confirm {
+    margin-bottom: 20px; /* Adjust the margin value as needed */
+}
+
+/* Error and success message styles */
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.success-message {
+    color: green;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* Additional Styles */
+
+/* Add extra space below "Retype Password" label */
+label[for="confirmPassword"] {
+    margin-bottom: 15px;
+}
+
+/* Adjust the grid layout for Password and Retype Password fields */
+#password,
+#confirmPassword {
+    grid-column: span 2; /* Make them span two columns */
+}
+
+/* Style the fieldset and legend */
+fieldset {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+legend {
+    font-weight: bold;
+    font-size: 18px;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+}

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blood Bank Details Form</title>
+    <link rel="stylesheet" href="bbankregistration.css">
+</head>
+<body>
+    <div class="container">
+    <h2><center>Blood Bank Details</center></h2>
+    
+    <form action="BBregister" method="post">
+        <div class="section">
+        <fieldset>
+            <legend>Blood Bank Information</legend>
+            <label for="bloodBankName">Blood Bank Name:</label>
+            <input type="text" id="bloodBankName" name="bloodBankName" required><br>
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required><br>
+
+            <label for="contactNumber">Contact Number:</label>
+            <input type="tel" id="contactNumber" name="contactNumber" required><br>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required><br>
+
+            <label for="website">Website URL:</label>
+            <input type="url" id="website" name="website" required><br><br>
+
+            <label for="contactName">Contact Person's Name:</label>
+            <input type="text" id="contactName" name="contactName" required><br>
+
+            <label for="licenseNumber">Blood Bank License Number:</label>
+            <input type="text" id="licenseNumber" name="licenseNumber" required><br>
+
+            <label for="licenseValidityFrom">Validity Start Date:</label><br><br>
+            <input type="date" id="licenseValidityFrom" name="licenseValidityFrom" required><br><br>
+
+            <label for="licenseValidityTo">Validity End Date:</label><br><br>
+            <input type="date" id="licenseValidityTo" name="licenseValidityTo" required><br><br>
+
+            <label for="issuingAuthority">License Issuing Authority:</label>
+            <input type="text" id="issuingAuthority" name="issuingAuthority" required><br>
+
+            <label for="state">State:</label>
+            <input type="text" id="state" name="state" required><br>
+
+            <label for="district">District:</label>
+            <input type="text" id="district" name="district" required><br>
+
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" required><br>
+
+            <label for="postalAddress">Postal Address:</label>
+            <textarea id="postalAddress" name="postalAddress" rows="4" required></textarea><br>
+
+        </fieldset>
+        </div>
+        <div class="section">
+        <fieldset>
+            <legend>Facilities and Services</legend>
+            <label for="bedsAvailable">Number of Beds available (if applicable):</label>
+            <input type="number" id="bedsAvailable" name="bedsAvailable" min="0"><br><br>
+
+            <label for="apheresisFacility">Apheresis Facility:</label>
+            <select id="apheresisFacility" name="apheresisFacility">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select><br>
+
+            <label for="helplineNumber">Helpline Number (if available):</label>
+            <input type="tel" id="helplineNumber" name="helplineNumber"><br>
+
+            <label for="additionalInfo">Additional Information:</label><br>
+            <textarea id="additionalInfo" name="additionalInfo" rows="4" cols="50"></textarea><br>
+        </fieldset>
+        </div>
+        <div class="section">
+        <fieldset>
+            <legend>Donation Information</legend>
+            <label for="donorType">Donor Type:</label>
+            <select id="donorType" name="donorType" required>
+                <option value="">Select Donor Type</option>
+                <option value="Voluntary">Voluntary</option>
+                <option value="Replacement">Replacement</option>
+                <option value="Directed">Directed</option>
+                <option value="Autologous">Autologous</option>
+                <option value="Family">Family</option>
+                <option value="External">External</option>
+            </select><br>
+
+            <label for="donationType">Donation Type:</label>
+            <select id="donationType" name="donationType" required>
+                <option value="">Select Donation Type</option>
+                <option value="Leucapheresis">Leucapheresis</option>
+                <option value="Plasmapheresis">Plasmapheresis</option>
+                <option value="Plateletpheresis">Plateletpheresis</option>
+                <option value="WholeBlood">Whole Blood</option>
+            </select><br>
+
+          
+            <!-- Add other checkbox options for component types here -->
+            
+            <label for="bagType">Bag Type:</label><br>
+            <select id="bagType" name="bagType" required>
+                <option value="">Select Bag Type</option>
+                <option value="Single">Single (350/450ml)</option>
+                <option value="Triple">Triple (350/450ml)</option>
+                <option value="Double">Double (350/450ml)</option>
+                <option value="Quadruple">Quadruple (450 ml)</option>
+                <!-- Add other bag type options here -->
+            </select><br>
+
+            
+            <!-- Add other checkbox options for TTI types here -->
+
+            <label for="remarks">Remarks:</label><br>
+            <textarea id="remarks" name="remarks" rows="4" cols="50"></textarea><br>
+        </fieldset>
+        
+        </div>
+        <div class="section">
+        <label>
+            <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
+            I agree to the terms and conditions of the blood donation platform.
+        </label><br>
+        </div>
+        <div class="section">
+        <div class="form-group-button">
+            <button type="submit"  id="submitBtn">Register</button>
+            <button type="button" id="clearFormBtn">Clear Form</button>
+        </div>
+    </div>
+        <!-- If you want to implement a 'Back' button or 'Cancel' button, you can add them here -->
+
+    </form>
+
+</div>
+</body>
+</html>

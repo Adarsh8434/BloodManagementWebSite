@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blood Donor Registration</title>
+    <link rel="stylesheet" href="newdonarregist.css">
+</head>
+<body>
+    <div class="container">
+        <h2>User Registration</h2>
+        <form action="UserRegistration" method="post" id="registrationForm">
+            <div class="form-group">
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" name="fullName" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="mobileNumber">Mobile Number:</label>
+                <input type="tel" id="mobileNumber" name="mobileNumber" required>
+            </div>
+            <div class="form-group">
+                <label for="state">State:</label>
+                <select id="state" name="state" required>
+                    <option value="" disabled selected>Select State</option>
+                   
+                    <option value="Andhra Pradesh">Andhra Pradesh</option>
+                    <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                    <option value="Assam">Assam</option>
+                    <option value="Bihar">Bihar</option>
+                    <option value="Chhattisgarh">Chhattisgarh</option>
+                    <option value="Goa">Goa</option>
+                    <option value="Gujarat">Gujarat</option>
+                    <option value="Haryana">Haryana</option>
+                    <option value="Himachal Pradesh">Himachal Pradesh</option>
+                    <option value="Jharkhand">Jharkhand</option>
+                    <option value="Karnataka">Karnataka</option>
+                    <option value="Kerala">Kerala</option>
+                    <option value="Madhya Pradesh">Madhya Pradesh</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Manipur">Manipur</option>
+                    <option value="Meghalaya">Meghalaya</option>
+                    <option value="Mizoram">Mizoram</option>
+                    <option value="Nagaland">Nagaland</option>
+                    <option value="Odisha">Odisha</option>
+                    <option value="Punjab">Punjab</option>
+                    <option value="Rajasthan">Rajasthan</option>
+                    <option value="Sikkim">Sikkim</option>
+                    <option value="Tamil Nadu">Tamil Nadu</option>
+                    <option value="Telangana">Telangana</option>
+                    <option value="Tripura">Tripura</option>
+                    <option value="Uttar Pradesh">Uttar Pradesh</option>
+                    <option value="Uttarakhand">Uttarakhand</option>
+                    <option value="West Bengal">West Bengal</option>
+                    <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                    <option value="Chandigarh">Chandigarh</option>
+                    <option value="Dadra and Nagar Haveli and Daman and Diu">Dadra and Nagar Haveli and Daman and Diu</option>
+                    <option value="Lakshadweep">Lakshadweep</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Puducherry">Puducherry</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="district">District:</label>
+                <select id="district" name="district" required>
+                    <option value="" disabled selected>Select District</option>
+                    <!-- Add options for districts of the selected state -->
+                    <!-- For example, if Andhra Pradesh is selected, add districts of Andhra Pradesh -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="email">Email ID:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group-confirm">
+                <label for="confirmPassword">Retype Password:</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+            </div>
+            <div class="form-group">
+                <input type="checkbox" id="declaration" name="declaration" required>
+                <label for="declaration">I authorize the website to display my name and required details to the needy.</label>
+            </div>
+            <div class="form-group-button">
+                <button type="submit"  id="submitBtn">Register</button>
+                <button type="button" id="clearFormBtn">Clear Form</button>
+            </div>
+        </form>
+    </div>
+    <script>
+            document.addEventListener('DOMContentLoaded', function () {
+        const clearFormBtn = document.getElementById('clearFormBtn');
+        clearFormBtn.addEventListener('click', function () {
+            const form = document.getElementById('registrationForm'); // Change to your form's ID
+            form.reset();
+        });
+    });
+    
+
+
+
+         // JavaScript code for populating districts based on the selected state
+         const stateSelect = document.getElementById("state");
+         const districtSelect = document.getElementById("district");
+ 
+         stateSelect.addEventListener("change", loadDistricts);
+ 
+         function loadDistricts() {
+             const selectedState = stateSelect.value;
+
+            // Clear existing options
+            districtSelect.innerHTML = '<option value="" disabled selected>Select District</option>';
+            // Populate districts based on the selected state
+            if (selectedState === "Andhra Pradesh") {
+                populateDistricts([
+                    "Anantapur",
+                    "Chittoor",
+                    "East Godavari",
+                    "Guntur",
+                    "Krishna",
+                    "Kurnool",
+                    "Prakasam",
+                    "Sri Potti Sriramulu Nellore",
+                    "Srikakulam",
+                    "Visakhapatnam",
+                    "Vizianagaram",
+                    "West Godavari",
+                    "YSR Kadapa"
+                ]);
+            } else if (selectedState === "Arunachal Pradesh") {
+                populateDistricts([
+                    "Tawang",
+                    "West Kameng",
+                    "East Kameng",
+                    "Papum Pare",
+                    "Kurung Kumey",
+                    "Kra Daadi",
+                    "Lower Subansiri",
+                    "Upper Subansiri",
+                    "West Siang",
+                    "East Siang",
+                    "Siang",
+                    "Upper Siang",
+                    "Lower Siang",
+                    "Lower Dibang Valley",
+                    "Dibang Valley",
+                    "Anjaw",
+                    "Lohit",
+                    "Namsai",
+                    "Changlang",
+                    "Tirap",
+                    "Longding"
+                ]);
+            } else if (selectedState === "Assam") {
+                populateDistricts([
+                    "Baksa",
+                    "Barpeta",
+                    "Biswanath",
+                    "Bongaigaon",
+                    "Cachar",
+                    "Charaideo",
+                    "Chirang",
+                    "Darrang",
+                    "Dhemaji",
+                    "Dhubri",
+                    "Dibrugarh",
+                    "Dima Hasao",
+                    "Goalpara",
+                    "Golaghat",
+                    "Hailakandi",
+                    "Hojai",
+                    "Jorhat",
+                    "Kamrup",
+                    "Kamrup Metropolitan",
+                    "Karbi Anglong",
+                    "Karimganj",
+                    "Kokrajhar",
+                    "Lakhimpur",
+                    "Majuli",
+                    "Morigaon",
+                    "Nagaon",
+                    "Nalbari",
+                    "Sivasagar",
+                    "Sonitpur",
+                    "South Salmara-Mankachar",
+                    "Tinsukia",
+                    "Udalguri",
+                    "West Karbi Anglong"
+                ]);
+            }else if (selectedState === "Bihar") {
+                populateDistricts([
+                    "Araria",
+                    "Arwal",
+                    "Aurangabad",
+                    "Banka",
+                    "Begusarai",
+                    "Bhagalpur",
+                    "Bhojpur",
+                    "Buxar",
+                    "Darbhanga",
+                    "East Champaran",
+                    "Gaya",
+                    "Gopalganj",
+                    "Jamui",
+                    "Jehanabad",
+                    "Kaimur",
+                    "Katihar",
+                    "Khagaria",
+                    "Kishanganj",
+                    "Lakhisarai",
+                    "Madhepura",
+                    "Madhubani",
+                    "Munger",
+                    "Muzaffarpur",
+                    "Nalanda",
+                    "Nawada",
+                    "Patna",
+                    "Purnia",
+                    "Rohtas",
+                    "Saharsa",
+                    "Samastipur",
+                    "Saran",
+                    "Sheikhpura",
+                    "Sheohar",
+                    "Sitamarhi",
+                    "Siwan",
+                    "Supaul",
+                    "Vaishali",
+                    "West Champaran"
+                ]);
+            } else if (selectedState === "Chhattisgarh") {
+                populateDistricts([
+                    "Balod",
+                    "Baloda Bazar",
+                    "Balrampur",
+                    "Bastar",
+                    "Bemetara",
+                    "Bijapur",
+                    "Bilaspur",
+                    "Dantewada",
+                    "Dhamtari",
+                    "Durg",
+                    "Gariaband",
+                    "Janjgir-Champa",
+                    "Jashpur",
+                    "Kanker",
+                    "Kondagaon",
+                    "Korba",
+                    "Koriya",
+                    "Mahasamund",
+                    "Mungeli",
+                    "Narayanpur",
+                    "Raigarh",
+                    "Raipur",
+                    "Rajnandgaon",
+                    "Sukma",
+                    "Surajpur",
+                    "Surguja"
+                ]);
+            } else if (selectedState === "Goa") {
+                populateDistricts([
+                    "North Goa",
+                    "South Goa"
+                ]);
+            }else if (selectedState === "Gujarat") {
+                populateDistricts([
+                    "Ahmedabad",
+                    "Amreli",
+                    "Anand",
+                    "Aravalli",
+                    "Banaskantha",
+                    "Bharuch",
+                    "Bhavnagar",
+                    "Botad",
+                    "Chhota Udaipur",
+                    "Dahod",
+                    "Dang",
+                    "Devbhoomi Dwarka",
+                    "Gandhinagar",
+                    "Gir Somnath",
+                "Jamnagar",
+                "Junagadh",
+                "Kheda",
+                "Kutch",
+                "Mahisagar",
+                "Mehsana",
+                "Morbi",
+                "Narmada",
+                "Navsari",
+                "Panchmahal",
+                "Patan",
+                "Porbandar",
+                "Rajkot",
+                "Sabarkantha",
+                "Surat",
+                "Surendranagar",
+                "Tapi",
+                "Vadodara",
+                "Valsad"
+            ]);
+        } else if (selectedState === "Haryana") {
+            populateDistricts([
+                "Ambala",
+                "Bhiwani",
+                "Charkhi Dadri",
+                "Faridabad",
+                "Fatehabad",
+                "Gurugram",
+                "Hisar",
+                "Jhajjar",
+                "Jind",
+                "Kaithal",
+                "Karnal",
+                "Kurukshetra",
+                "Mahendragarh",
+                "Nuh",
+                "Palwal",
+                "Panchkula",
+                "Panipat",
+                "Rewari",
+                "Rohtak",
+                "Sirsa",
+                "Sonipat",
+                "Yamunanagar"
+            ]);
+        } else if (selectedState === "Himachal Pradesh") {
+            populateDistricts([
+                "Bilaspur",
+                "Chamba",
+                "Hamirpur",
+                "Kangra",
+                "Kinnaur",
+                "Kullu",
+                "Lahaul and Spiti",
+                "Mandi",
+                "Shimla",
+                "Sirmaur",
+                "Solan",
+                "Una"
+            ]);
+        }else if (selectedState === "Jharkhand") {
+            populateDistricts([
+                "Bokaro",
+                "Chatra",
+                "Deoghar",
+                "Dhanbad",
+                "Dumka",
+                "East Singhbhum",
+                "Garhwa",
+                "Giridih",
+                "Godda",
+                "Gumla",
+                "Hazaribagh",
+                "Jamtara",
+                "Khunti",
+                "Koderma",
+                "Latehar",
+                "Lohardaga",
+                "Pakur",
+                "Palamu",
+                "Ramgarh",
+                "Ranchi",
+                "Sahibganj",
+                "Seraikela-Kharsawan",
+                "Simdega",
+                "West Singhbhum"
+            ]);
+        } else if (selectedState === "Karnataka") {
+            populateDistricts([
+                "Bagalkot",
+                "Ballari",
+                "Belagavi",
+                "Bengaluru Rural",
+                "Bengaluru Urban",
+                "Bidar",
+                "Chamarajanagar",
+                "Chikkaballapur",
+                "Chikkamagaluru",
+                "Chitradurga",
+                "Dakshina Kannada",
+                "Davanagere",
+                "Dharwad",
+                "Gadag",
+                "Hassan",
+                "Haveri",
+                "Kalaburagi",
+                "Kodagu",
+                "Kolar",
+                "Koppal",
+                "Mandya",
+                "Mysuru",
+                "Raichur",
+                "Ramanagara",
+                "Shivamogga",
+                "Tumakuru",
+                "Udupi",
+                "Uttara Kannada",
+                "Vijayapura",
+                "Yadgir"
+            ]);
+        } else if (selectedState === "Kerala") {
+            populateDistricts([
+                "Alappuzha",
+                "Ernakulam",
+                "Idukki",
+                "Kannur",
+                "Kasaragod",
+                "Kollam",
+                "Kottayam",
+                "Kozhikode",
+                "Malappuram",
+                "Palakkad",
+                "Pathanamthitta",
+                "Thiruvananthapuram",
+                "Thrissur",
+                "Wayanad"
+            ]);
+        } else if (selectedState === "Madhya Pradesh") {
+            populateDistricts([
+                "Agar Malwa",
+                "Alirajpur",
+                "Anuppur",
+                "Ashoknagar",
+                "Balaghat",
+                "Barwani",
+                "Betul",
+                "Bhind",
+                "Bhopal",
+                "Burhanpur",
+                "Chhatarpur",
+                "Chhindwara",
+                "Damoh",
+                "Datia",
+                "Dewas",
+                "Dhar",
+                "Dindori",
+                "Guna",
+                "Gwalior",
+                "Harda",
+                "Hoshangabad",
+                "Indore",
+                "Jabalpur",
+                "Jhabua",
+                "Katni",
+                "Khandwa",
+                "Khargone",
+                "Mandla",
+                "Mandsaur",
+                "Morena",
+                "Narsinghpur",
+                "Neemuch",
+                "Panna",
+                "Raisen",
+                "Rajgarh",
+                "Ratlam",
+                "Rewa",
+                "Sagar",
+                "Satna",
+                "Sehore",
+                "Seoni",
+                "Shahdol",
+                "Shajapur",
+                "Sheopur",
+                "Shivpuri",
+                "Sidhi",
+                "Singrauli",
+                "Tikamgarh",
+                "Ujjain",
+                "Umaria",
+                "Vidisha"
+            ]);
+        } else if (selectedState === "Maharashtra") {
+            populateDistricts([
+                "Ahmednagar",
+                "Akola",
+                "Amravati",
+                "Aurangabad",
+                "Beed",
+                "Bhandara",
+                "Buldhana",
+                "Chandrapur",
+                "Dhule",
+                "Gadchiroli",
+                "Gondia",
+                "Hingoli",
+                "Jalgaon",
+                "Jalna",
+                "Kolhapur",
+                "Latur",
+                "Mumbai City",
+                "Mumbai Suburban",
+                "Nagpur",
+                "Nanded",
+                "Nandurbar",
+                "Nashik",
+                "Osmanabad",
+                "Palghar",
+                "Parbhani",
+                "Pune",
+                "Raigad",
+                "Ratnagiri",
+                "Sangli",
+                "Satara",
+                "Sindhudurg",
+                "Solapur",
+                "Thane",
+                "Wardha",
+                "Washim",
+                "Yavatmal"
+            ]);
+        }else if (selectedState === "Manipur") {
+            populateDistricts([
+                "Bishnupur",
+                "Chandel",
+                "Churachandpur",
+                "Imphal East",
+                "Imphal West",
+                "Jiribam",
+        "Chandel",
+        "Churachandpur",
+        "Imphal East",
+        "Imphal West",
+        "Jiribam",
+        "Kakching",
+        "Kamjong",
+        "Kangpokpi",
+        "Noney",
+        "Pherzawl",
+        "Senapati",
+        "Tamenglong",
+        "Tengnoupal",
+        "Thoubal",
+        "Ukhrul"
+    ]);
+} else if (selectedState === "Meghalaya") {
+    populateDistricts([
+        "East Garo Hills",
+        "East Jaintia Hills",
+        "East Khasi Hills",
+        "North Garo Hills",
+        "Ri-Bhoi",
+        "South Garo Hills",
+        "South West Garo Hills",
+        "South West Khasi Hills",
+        "West Garo Hills",
+        "West Jaintia Hills",
+        "West Khasi Hills"
+    ]);
+} else if (selectedState === "Mizoram") {
+    populateDistricts([
+        "Aizawl",
+        "Champhai",
+        "Hnahthial",
+        "Khawzawl",
+        "Kolasib",
+        "Lawngtlai",
+        "Lunglei",
+        "Mamit",
+        "Saiha",
+        "Saitual",
+        "Serchhip"
+    ]);
+} else if (selectedState === "Nagaland") {
+    populateDistricts([
+        "Dimapur",
+        "Kiphire",
+        "Kohima",
+        "Longleng",
+        "Mokokchung",
+        "Mon",
+        "Peren",
+        "Phek",
+        "Tuensang",
+        "Wokha",
+        "Zunheboto"
+    ]);
+} else if (selectedState === "Odisha") {
+    populateDistricts([
+        "Angul",
+        "Balangir",
+        "Balasore",
+        "Bargarh",
+        "Bhadrak",
+        "Boudh",
+        "Cuttack",
+        "Deogarh",
+        "Dhenkanal",
+        "Gajapati",
+        "Ganjam",
+        "Jagatsinghpur",
+        "Jajpur",
+        "Jharsuguda",
+        "Kalahandi",
+        "Kandhamal",
+        "Kendrapara",
+        "Kendujhar (Keonjhar)",
+        "Khordha",
+        "Koraput",
+        "Malkangiri",
+        "Mayurbhanj",
+        "Nabarangpur",
+        "Nayagarh",
+        "Nuapada",
+        "Puri",
+        "Rayagada",
+        "Sambalpur",
+        "Subarnapur (Sonepur)",
+        "Sundargarh"
+    ]);
+} else if (selectedState === "Punjab") {
+    populateDistricts([
+        "Amritsar",
+        "Barnala",
+        "Bathinda",
+        "Faridkot",
+        "Fatehgarh Sahib",
+        "Fazilka",
+        "Ferozepur",
+        "Gurdaspur",
+        "Hoshiarpur",
+        "Jalandhar",
+        "Kapurthala",
+        "Ludhiana",
+        "Mansa",
+        "Moga",
+        "Muktsar",
+        "Pathankot",
+        "Patiala",
+        "Rupnagar",
+        "Sahibzada Ajit Singh Nagar (Mohali)",
+        "Sangrur",
+        "Shahid Bhagat Singh Nagar (Nawanshahr)",
+        "Sri Muktsar Sahib",
+        "Tarn Taran"
+    ]);
+} else if (selectedState === "Rajasthan") {
+    populateDistricts([
+        "Ajmer",
+        "Alwar",
+        "Banswara",
+        "Baran",
+        "Barmer",
+        "Bharatpur",
+        "Bhilwara",
+        "Bikaner",
+        "Bundi",
+        "Chittorgarh",
+        "Churu",
+        "Dausa",
+        "Dholpur",
+        "Dungarpur",
+        "Hanumangarh",
+        "Jaipur",
+        "Jaisalmer",
+        "Jalore",
+        "Jhalawar",
+        "Jhunjhunu",
+        "Jodhpur",
+        "Karauli",
+        "Kota",
+        "Nagaur",
+        "Pali",
+        "Pratapgarh",
+        "Rajsamand",
+        "Sawai Madhopur",
+        "Sikar",
+        "Sirohi",
+        "Sri Ganganagar",
+        "Tonk",
+        "Udaipur"
+    ]);
+} else if (selectedState === "Sikkim") {
+    populateDistricts([
+    "East Sikkim",
+    "North Sikkim",
+    "South Sikkim",
+    "West Sikkim"
+]);
+} else if (selectedState === "Tamil Nadu") {
+populateDistricts([
+    "Ariyalur",
+    "Chengalpattu",
+    "Chennai",
+    "Coimbatore",
+    "Cuddalore",
+    "Dharmapuri",
+    "Dindigul",
+    "Erode",
+    "Kallakurichi",
+    "Kanchipuram",
+    "Kanyakumari",
+    "Karur",
+    "Krishnagiri",
+    "Madurai",
+    "Mayiladuthurai",
+    "Nagapattinam",
+    "Namakkal",
+    "Nilgiris",
+    "Palani",
+    "Pudukkottai",
+    "Ramanathapuram",
+    "Ranipet",
+    "Salem",
+    "Sivaganga",
+    "Tenkasi",
+    "Thanjavur",
+    "Theni",
+    "Thoothukudi (Tuticorin)",
+    "Tiruchirappalli",
+    "Tirunelveli",
+    "Tirupattur",
+    "Tiruppur",
+    "Tiruvallur",
+    "Tiruvannamalai",
+    "Tiruvarur",
+    "Vellore",
+    "Viluppuram",
+    "Virudhunagar"
+]);
+} else if (selectedState === "Telangana") {
+populateDistricts([
+    "Adilabad",
+    "Bhadradri Kothagudem",
+    "Hyderabad",
+    "Jagtial",
+    "Jangaon",
+    "Jayashankar Bhupalapally",
+    "Jogulamba Gadwal",
+    "Kamareddy",
+    "Karimnagar",
+    "Khammam",
+    "Komaram Bheem Asifabad",
+    "Mahabubabad",
+    "Mahbubnagar",
+    "Mancherial",
+    "Medak",
+    "Medchal-Malkajgiri",
+    "Mulugu",
+    "Nagarkurnool",
+    "Nalgonda",
+    "Nirmal",
+    "Nizamabad",
+    "Peddapalli",
+    "Rajanna Sircilla",
+    "Ranga Reddy",
+    "Sangareddy",
+    "Siddipet",
+    "Suryapet",
+    "Vikarabad",
+    "Wanaparthy",
+    "Warangal (Rural)",
+    "Warangal (Urban)",
+    "Yadadri Bhuvanagiri"
+]);
+} else if (selectedState === "Tripura") {
+populateDistricts([
+    "Dhalai",
+    "Gomati",
+    "Khowai",
+    "North Tripura",
+    "Sepahijala",
+    "South Tripura",
+    "Unakoti",
+    "West Tripura"
+]);
+} else if (selectedState === "Uttar Pradesh") {
+populateDistricts([
+    "Agra",
+    "Aligarh",
+    "Ambedkar Nagar",
+    "Amethi (Chatrapati Sahuji Mahraj Nagar)",
+    "Amroha (J.P. Nagar)",
+    "Auraiya",
+    "Ayodhya",
+    "Azamgarh",
+    "Baghpat",
+    "Bahraich",
+    "Ballia",
+    "Balrampur",
+    "Banda",
+    "Barabanki",
+    "Bareilly",
+    "Basti",
+    "Bhadohi",
+    "Bijnor",
+    "Budaun",
+    "Bulandshahr",
+    "Chandauli",
+    "Chitrakoot",
+    "Deoria",
+    "Etah",
+    "Etawah",
+    "Farrukhabad",
+    "Fatehpur",
+    "Firozabad",
+    "Gautam Buddh Nagar",
+    "Ghaziabad",
+    "Ghazipur",
+    "Gonda",
+    "Gorakhpur",
+    "Hamirpur",
+    "Hapur (Panchsheel Nagar)",
+    "Hardoi",
+    "Hathras",
+    "Jalaun",
+    "Jaunpur",
+    "Jhansi",
+    "Kannauj",
+    "Kanpur Dehat",
+    "Kanpur Nagar",
+    "Kasganj (Kanshiram Nagar)",
+    "Kaushambi",
+    "Kushinagar (Padrauna)",
+    "Lakhimpur - Kheri",
+    "Lalitpur",
+    "Lucknow",
+    "Maharajganj",
+    "Mahoba",
+    "Mainpuri",
+    "Mathura",
+    "Mau",
+    "Meerut",
+    "Mirzapur",
+    "Moradabad",
+    "Muzaffarnagar",
+    "Pilibhit",
+    "Pratapgarh",
+    "Prayagraj",
+    "Raebareli",
+    "Rampur",
+    "Saharanpur",
+    "Sambhal (Bhim Nagar)",
+    "Sant Kabir Nagar",
+    "Shahjahanpur",
+    "Shamli",
+    "Shravasti",
+    "Siddharthnagar",
+    "Sitapur",
+    "Sonbhadra",
+    "Sultanpur",
+    "Unnao",
+    "Varanasi"
+]);
+} else if (selectedState === "Uttarakhand") {
+populateDistricts([
+    "Almora",
+    "Bageshwar",
+    "Chamoli",
+    "Champawat",
+    "Dehradun",
+    "Haridwar",
+    "Nainital",
+    "Pauri Garhwal",
+    "Pithoragarh",
+    "Rudraprayag",
+    "Tehri Garhwal",
+    "Udham Singh Nagar",
+    "Uttarkashi"
+]);
+} else if (selectedState === "West Bengal") {
+populateDistricts([
+"Alipurduar",
+"Bankura",
+"Birbhum",
+"Cooch Behar",
+"Dakshin Dinajpur (South Dinajpur)",
+"Darjeeling",
+"Hooghly",
+"Howrah",
+"Jalpaiguri",
+"Jhargram",
+"Kalimpong",
+"Kolkata",
+"Malda",
+"Murshidabad",
+"Nadia",
+"North 24 Parganas",
+"Paschim Medinipur (West Medinipur)",
+"Purba Medinipur (East Medinipur)",
+"Purulia",
+"South 24 Parganas",
+"Uttar Dinajpur (North Dinajpur)"
+]);
+}
+
+     // Function to populate the districts
+            function populateDistricts(districts) {
+                for (const district of districts) {
+                    const option = document.createElement("option");
+                    option.text = district;
+                    option.value = district;
+                    districtSelect.appendChild(option);
+                }
+            }
+        }
+      
+</script>
+</body>
+</html>
+

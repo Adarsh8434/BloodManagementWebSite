@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Bank Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Add your own custom CSS if needed -->
+</head>
+<body>
+    <!-- <div class="container">
+        <h1>Welcome to Blood Bank Dashboard</h1> -->
+        <!-- Add your dashboard content here -->
+        <!-- <h2>Blood Bank Information</h2>
+        <p>Blood Bank Name: XYZ Blood Bank</p>
+        <p>Location: Your City, Country</p> -->
+        <!-- Add more blood bank information as needed -->
+
+        <!-- <h2>Recent Blood Donations</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Donor Name</th>
+                    <th>Blood Type</th> -->
+                    <!-- <th>Donation Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>John Doe</td>
+                    <td>A+</td>
+                    <td>2023-07-19</td>
+                </tr>
+                <tr>
+                    <td>Jane Smith</td>
+                    <td>O-</td>
+                    <td>2023-07-18</td>
+                </tr> -->
+                <!-- Add more recent blood donation records here -->
+            <!-- </tbody>
+        </table> -->
+
+        <!-- <h2>Blood Requests</h2> -->
+        <!-- <table>
+            <thead>
+                <tr>
+                    <th>Patient Name</th>
+                    <th>Blood Type</th>
+                    <th>Request Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Michael Johnson</td>
+                    <td>B+</td>
+                    <td>2023-07-17</td>
+                </tr>
+                <tr>
+                    <td>Susan Lee</td>
+                    <td>AB-</td>
+                    <td>2023-07-16</td>
+                </tr> -->
+                <!-- Add more blood request records here -->
+            <!-- </tbody>
+        </table> -->
+    
+        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+            <!-- <div class="col-md-3 mb-2 mb-md-0">
+              <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
+                <img src="Free_Sample_By_Wix.jpg" alt="logo" class="bi" width="50" height="60" role="img">
+              </a>
+              <h4>BloodLink</h4>
+            </div> -->
+            <br/><br/>
+            <div class="dashboardmenu"><ul id="menu">
+                <!-- <li><a href="#" class="nav-link px-2 link-secondary">Home</a></li> -->
+                <li><a href="#" class="nav-link px-2">Dashboard</a>
+                </li>
+                <li><a href="#" class="nav-link px-2">Manage blood</a>
+                </li>
+                <li><a href="#" class="nav-link px-2">Manage request</a>
+                </li>
+                <li><a href="#" class="nav-link px-2">Blood issued</a>
+                </li>
+                <li><a href="#" class="nav-link px-2">Logout</a>
+                </li>
+            </ul></div>
+            
+            
+        </header>
+        <main><h1><b>Dashboard</b></h1>
+            <h2 class="bloodcount"><b>Welcome <span id="BloodBankName">Blood Bank Name</span> Blood Bank</b></h2>
+            
+            <h2 class="heading">Blood Availability Status</h2>
+            <br/><br/><br/>
+            <!-- Add more dashboard content as needed -->
+            <div class="boxcontainer">
+                <div class="box1">
+                    <p><br/><b>A+ (Positive)</b><br/><br/></p>
+                    <p class="bloodcount">5</p>
+                </div>
+                <div class="box2">
+                    <p><br/><b>B+ (Positive)</b><br/><br/></p>
+                    <p class="bloodcount">10</p>
+                </div>
+                <div class="box3">
+                    <p><br/><b>AB+ (Positive)</b><br/><br/></p>
+                    <p class="bloodcount">3</p>
+                </div>
+                <div class="box4">
+                    <p><br/><b>O+ (Positive)</b><br/><br/></p>
+                    <p class="bloodcount">20</p>
+                </div>
+            </div>
+            <br/><br/><br/>
+            <div class="boxcontainer">
+                <div class="box1">
+                    <p><br/><b>A- (Negative)</b><br/><br/></p>
+                    <p class="bloodcount">25</p>
+                </div>
+                <div class="box2">
+                    <p><br/><b>B- (Negative)</b><br/><br/></p>
+                    <p class="bloodcount">8</p>
+                </div>
+                <div class="box3">
+                    <p><br/><b>AB- (Negative)</b><br/><br/></p>
+                    <p class="bloodcount">2</p>
+                </div>
+                <div class="box4">
+                    <p><br/><b>O- (Negative)</b><br/><br/></p>
+                    <p class="bloodcount">14</p>
+                </div>
+            </div>
+            <br><br>
+        </main>
+        <script>
+        // Retrieve blood bank name from session storage
+        var bloodBankName = sessionStorage.getItem('BloodBankName');
+        if (bloodBankName) {
+            // Update the welcome message with the blood bank name
+            document.getElementById('BloodBankName').textContent = bloodBankName;
+        }
+    </script>
+
+</body>
+</html>

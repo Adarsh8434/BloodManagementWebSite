@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Add your own custom CSS if needed -->
+</head>
+<body>
+    <div class="container">
+        <h1>User Login</h1>
+        <!-- Your login form goes here -->
+        <form id="userLoginForm" onsubmit="return validateForm()" action="userlogin" method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <br>
+            <button type="submit">Login</button>
+        </form>
+        <p>Not yet registered? <a href="user_registration.html">Register as User</a></p>
+    </div>
+
+    <script>
+        // Sample function to simulate successful login
+      //  function simulateLoginSuccess() {
+        //  const form = document.getElementById('userLoginForm');
+          //form.addEventListener('submit', function (event) {
+            //event.preventDefault(); // Prevent form submission (to demonstrate redirect only)
+    //        redirectToUserDashboard();
+    //      });
+    //    }
+
+      //  function redirectToUserDashboard() {
+    //        window.location.href = 'user_dashboard.html';
+      //  }
+
+        // Simulate successful login (remove this function in a real application and implement actual authentication)
+     //   simulateLoginSuccess();
+    </script>
+</body>
+</html>
+

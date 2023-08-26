@@ -1,0 +1,245 @@
+.container{
+    font-size: larger;
+    margin-top: 50px;
+    padding-top: 20px;
+    padding-right: 30px;
+    padding-bottom: 50px;
+    padding-left: 140px;
+    background-color:rgb(240,249,242);
+    border-top-left-radius: 40px;
+    border-radius: 100px 10px 10px 10px ;
+}
+.bi{
+    margin-left: 31px;
+}
+.anchor{
+    color:black;
+    text-decoration: none;
+}
+.boxcontainer{
+    justify-content: center;
+    display: flex;
+}
+.box1{
+    /* margin-left: 260px; */
+    background-color: hotpink;
+    color: black;
+    width: 150px;
+    height: 170px;
+    border-radius: 8px;
+}
+.box2{
+    margin-left: 20px;
+    background-color: rgb(93, 189, 226);
+    color: black;
+    width: 150px;
+    height: 170px;
+    border-radius: 8px;
+}
+.box3{
+    margin-left: 20px;
+    background-color: rgb(85, 206, 115);
+    color: black;
+    width: 150px;
+    height: 170px;
+    border-radius: 8px;
+}
+.box4{
+    margin-left: 20px;
+    background-color: rgb(245, 231, 31);
+    color: black;
+    width: 150px;
+    height: 170px;
+    border-radius: 8px;
+}
+.bloodcount{
+    font-size: 40px;
+    text-align: center;
+}
+.dashboardmenu{
+    color: white;
+    background-color: red;
+    
+}
+.py-5{
+    height: 10cm;
+    padding-bottom: -6px;
+    padding-left: 20px;
+    color: white;
+    background-color:black;
+    margin-left: 30px;
+    margin-bottom: 0px;
+}
+.dropdown-menu {
+    display: none;
+}
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+}
+.dropdown-menu {
+    display: none;
+}
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+}
+.body 
+{ 
+    padding:0;
+   margin:0; 
+}
+.heading{
+    
+    font-size: larger;
+    text-align: center;
+    color: red;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.heading2{
+    margin: 20px;
+    /* font-size: xx-large; */
+    text-align: center;
+    color: red;
+    padding: 30px;
+    font-size: 50px;
+}
+.text2{
+    font-size: xx-small;
+    text-align: center;
+    color: white;
+    background-color: red;
+}
+.button1{
+    background-color: crimson;
+    color: white;
+    width: 150px;
+    height: 170px;
+    border-radius: 8px;
+}
+.button2{
+    margin-left: 50px;
+    background-color: dodgerblue;
+    color: white;
+    width: 150px;
+    height: 170px;
+    border-radius: 8px;
+}
+.button3{
+    margin-left: 50px;
+    background-color: rgb(173, 173, 40);
+    color: white;
+    width: 150px;
+    height: 170px;
+    border-radius: 8px;
+}
+.button4{
+    margin-left: 50px;
+    background-color: green;
+    color: white;
+    width: 150px;
+    height: 170px;
+    border-radius: 8px;
+}
+
+.nav-item a{
+    color: white !important;
+}
+a:hover {
+    text-decoration: underline;
+  }
+  /* @media (max-width:700px)
+  {
+      .row{
+          flex-direction: column;
+      }
+  } */
+  #menu, #menu ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+ #menu{
+    width: 900px;
+    margin: 50px auto;
+    background-color: white;
+    border-radius: 6px;
+ } 
+ #menu:before, #menu::after{
+     content: '';
+    display: table;
+ }
+ #menu:after{
+    clear:both;
+ }
+ #menu li{
+    float: left;
+    position: relative;
+ }
+ #menu a{
+    float: left;
+    padding: 12px 8px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: black;
+ }
+ #menu li:hover > a{
+    color: rgb(255, 34, 0);
+    background:white;
+ }
+ #menu ul{
+      margin: 20px 0 0 0;
+      opacity: 0;
+      visibility: hidden;
+      position: absolute;
+      top: 46px;
+      left: 0;
+      z-index: 1;
+      background:white;
+      border-radius:3px  ;
+      transition: all .3s ease-in-out;
+
+    }
+    #menu li:hover > ul{
+        opacity:1 ;
+        visibility: visible;
+        margin: 0;
+    }
+    #menu ul li{
+        float: none;
+        display: block;
+        border: 0;
+    }
+    #menu ul a{
+        padding: 10px;
+        width: 185px;
+        display: block;
+        white-space: nowrap;
+        float: none;
+        text-transform: uppercase;
+    }
+    .sli{
+        color: #7f7979;
+    }
+
+    /* Responsiveness */
+    @media (max-width: 576px) {
+        .button1,
+        .button2,
+        .button3,
+        .button4 {
+          width: 100%;
+          margin-left: 0;
+          margin-bottom: 10px;
+        }
+      }
+      @media (max-width: 768px) {
+        .table-responsive {
+          overflow-x: auto;
+        }
+      } 
+      @media (max-width: 768px) {
+        .col-md-2 {
+          width: 100%;
+          margin-bottom: 20px;
+        
+        }
+      }
