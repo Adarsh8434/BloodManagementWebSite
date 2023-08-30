@@ -21,7 +21,8 @@
     
 </header>
         <main><h1><b>Dashboard</b></h1>
-            <h2 class="bloodcount"><b>Welcome (username)</b></h2>
+                  <h1>Welcome to your User Dashboard, <span id="usernamePlaceholder"></span>!</h1>
+
             <br/><br/><br/>
             <h1>//Dynamic table for user details//</h1>
             <br><br>
@@ -67,5 +68,26 @@
               <p>©Authorized blood management website 2023.</p>
             </div>
           </footer>
+          
+        // Retrieve the username from the session and update the placeholder
+       <script>
+    fetch('get_username', {
+        method: 'GET',
+        headers: {
+            'Accept': 'application/json'
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+		 console.log('Received data:', data);
+        const usernamePlaceholder = document.getElementById('usernamePlaceholder');
+        usernamePlaceholder.textContent = data.username;
+    })
+    .catch(error => {
+        console.error('Error fetching username:', error);
+    });
+</script>
+
+    
 </body>
 </html>

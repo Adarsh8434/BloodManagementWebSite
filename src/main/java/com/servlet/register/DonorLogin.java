@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.bankRegistration.HttpSession;
+
 /**
  * Servlet implementation class DonorLogin
  */
@@ -46,10 +48,13 @@ public class DonorLogin extends HttpServlet {
 		
 		if (Donor_LoginPage.validate(username, password)) {
 		    // Successful login, redirect to the donor dashboard or any other page
-		    response.sendRedirect("donor_dashboard.html");
+			HttpSession session = request.getSession();
+            session.setAttribute("username", username);
+			response.sendRedirect("donor_dashboard.html");
 		} else {
 		    // Incorrect login, show an error message and stay on the same login page
 		    out.print("Sorry username and password mismatch");
+		   
 		    RequestDispatcher rd = request.getRequestDispatcher("donor_login.html");
 		    rd.include(request, response);
 		}
