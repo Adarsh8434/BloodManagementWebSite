@@ -13,15 +13,15 @@
           <div style="background-color: rgb(236, 28, 20);">
             <header class="d-flex justify-content-center py-3">
               <ul class="nav nav-pills">
-                <li class="nav-item"><a href="#" class="nav-link active" aria-current="page" style="color: white; background: red; margin-left: 20px; font-size: larger;">Home</a></li>
+                <li class="nav-item"><a href="index.html" class="nav-link active" aria-current="page" style="color: white; background: red; margin-left: 20px; font-size: larger;">Home</a></li>
                 <li class="nav-item"><a href="#" class="nav-link" style="color: white; background: red; margin-left: 20px; font-size: larger;">Manage Profile</a></li>
-                <li class="nav-item"><a href="#" class="nav-link" style="color: white; background: red; margin-left: 20px; font-size: larger;">Sign Out</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" id="signoutLink"style="color: white; background: red; margin-left: 20px; font-size: larger;">Sign Out</a></li>
               </ul>
             </header>
           </div>
         </header>
         <main><h1><b>Dashboard</b></h1>
-            <h2 class="bloodcount"><b>Welcome (username)</b></h2>
+            <h2 class="bloodcount"><b>Welcome To Donor DashBoard</b></h2>
             <br/><br/><br/>
         </main>
         <footer class="py-5">
@@ -66,4 +66,15 @@
             </div>
           </footer>
 </body>
+ <script>
+        const signoutLink = document.getElementById('signoutLink');
+
+        signoutLink.addEventListener('click', () => {
+            // Perform signout actions here
+            // For example, clear user session, reset UI, redirect to login page, etc.
+            
+            // After performing signout actions, you can redirect to the login page
+            window.location.href = 'donor_login.html'; // Replace with your login page URL
+        });
+    </script>
 </html>

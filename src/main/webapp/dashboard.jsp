@@ -1,3 +1,4 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,66 +9,67 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 </head>
 <body>
-
-        <header>
+    <header>
             <div style="background-color: rgb(236, 28, 20);">
                 <header class="d-flex justify-content-center py-3">
                   <ul class="nav nav-pills">
-                    <li class="nav-item"><a href="index.html" class="nav-link active" aria-current="page" style="color: white; background: red; margin-left: 20px; font-size: larger;">Home</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link active" aria-current="page" style="color: white; background: red; margin-left: 20px; font-size: larger;">Dashboard</a></li>
                     <li class="nav-item"><a href="#" class="nav-link" style="color: white; background: red; margin-left: 20px; font-size: larger;">Manage Blood</a></li>
-                   <!-- <li class="nav-item"><a href="#" class="nav-link" style="color: white; background: red; margin-left: 20px; font-size: larger;">Manage Request</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link" style="color: white; background: red; margin-left: 20px; font-size: larger;">Blood Issued</a></li>-->
-                    <li class="nav-item"><a href="#" class="nav-link" id="signoutLink" style="color: white; background: red; margin-left: 20px;  font-size: larger; ">Log Out</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link" style="color: white; background: red; margin-left: 20px; font-size: larger;">Manage Request</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link" style="color: white; background: red; margin-left: 20px; font-size: larger;">Blood Issued</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link" style="color: white; background: red; margin-left: 20px; font-size: larger;">Log Out</a></li>
                   </ul>
                 </header>
               </div>
             
         </header>
-        <main><h1><b>Dashboard</b></h1>
-            <h2 class="bloodcount"><b>Welcome Blood Bank</b></h2>
-            <h2 class="heading">Blood Availability Status</h2>
-            <br/><br/><br/>
-            
-            <div class="boxcontainer">
-                <div class="box1">
-                    <p><br/><b>A+ (Positive)</b><br/><br/></p>
-                    <p class="bloodcount">0</p>
-                </div>
-                <div class="box2">
-                    <p><br/><b>B+ (Positive)</b><br/><br/></p>
-                    <p class="bloodcount">0</p>
-                </div>
-                <div class="box3">
-                    <p><br/><b>AB+ (Positive)</b><br/><br/></p>
-                    <p class="bloodcount">0</p>
-                </div>
-                <div class="box4">
-                    <p><br/><b>O+ (Positive)</b><br/><br/></p>
-                    <p class="bloodcount">0</p>
-                </div>
+    <main>
+        <h1><b>Dashboard</b></h1>
+        <h2 class="bloodcount"><b>Welcome <%= session.getAttribute("bloodBankUsername") %> Blood Bank</b></h2>
+        <h2 class="heading">Blood Availability Status</h2>
+        <br/><br/><br/>
+
+        <div class="boxcontainer">
+            <div class="box1">
+                <p><br/><b>A+ (Positive)</b><br/><br/></p>
+                <p class="bloodcount"><%= bloodStock.getA_positive() %></p>
             </div>
-            <br/><br/><br/>
-            <div class="boxcontainer">
-                <div class="box1">
-                    <p><br/><b>A- (Negative)</b><br/><br/></p>
-                    <p class="bloodcount">0</p>
-                </div>
-                <div class="box2">
-                    <p><br/><b>B- (Negative)</b><br/><br/></p>
-                    <p class="bloodcount">0</p>
-                </div>
-                <div class="box3">
-                    <p><br/><b>AB- (Negative)</b><br/><br/></p>
-                    <p class="bloodcount">0</p>
-                </div>
-                <div class="box4">
-                    <p><br/><b>O- (Negative)</b><br/><br/></p>
-                    <p class="bloodcount">0</p>
-                </div>
+            <div class="box2">
+                <p><br/><b>B+ (Positive)</b><br/><br/></p>
+                <p class="bloodcount"><%= bloodStock.getB_positive() %></p>
             </div>
+            <div class="box3">
+                <p><br/><b>AB+ (Positive)</b><br/><br/></p>
+                <p class="bloodcount"><%= bloodStock.getAB_positive() %></p>
+            </div>
+            <div class="box4">
+                <p><br/><b>O+ (Positive)</b><br/><br/></p>
+                <p class="bloodcount"><%= bloodStock.getO_positive() %></p>
+            </div>
+
+        <br/><br/><br/>
+        <div class="boxcontainer">
+            <div class="box1">
+                <p><br/><b>A+ (Negative)</b><br/><br/></p>
+                <p class="bloodcount"><%= bloodStock.getA_negative() %></p>
+            </div>
+            <div class="box2">
+                <p><br/><b>B+ (Negative)</b><br/><br/></p>
+                <p class="bloodcount"><%= bloodStock.getB_negative() %></p>
+            </div>
+            <div class="box3">
+                <p><br/><b>AB+ (Negative)</b><br/><br/></p>
+                <p class="bloodcount"><%= bloodStock.getAB_negative() %></p>
+            </div>
+            <div class="box4">
+                <p><br/><b>O+ (Negative)</b><br/><br/></p>
+                <p class="bloodcount"><%= bloodStock.getO_negative() %></p>
+            </div>
+        </div>
             <br><br>
-        </main>
-        <footer class="py-5">
+
+    </main>
+    <footer class="py-5">
             <div class="row">
               <div class="col-6 col-md-2 mb-3">
                 <h5 class="sli">Links</h5>
@@ -115,17 +117,6 @@
                 // Update the welcome message with the blood bank name
                 document.getElementById('BloodBankName').textContent = bloodBankName;
             }
-            
-        const signoutLink = document.getElementById('signoutLink');
-
-        signoutLink.addEventListener('click', () => {
-            // Perform signout actions here
-            // For example, clear user session, reset UI, redirect to login page, etc.
-            
-            // After performing signout actions, you can redirect to the login page
-            window.location.href = 'blood_bank_login.html'; // Replace with your login page URL
-        });
-    
         </script>  
 </body>
 </html>

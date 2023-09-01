@@ -45,10 +45,10 @@ public class userlogin extends HttpServlet {
 		String username=request.getParameter("username");
 		String password=request.getParameter("password");
 		
-		if (Donor_LoginPage.validate(username, password)) {
+		if (UserLoginPage.validate(username, password)) {
 		    // Successful login, redirect to the donor dashboard or any other page
-			 request.getSession().setAttribute("username", username);
-		    response.sendRedirect("user_dashboard.html");
+         //	 request.getSession().setAttribute("username", username);
+			response.sendRedirect(request.getContextPath() + "/user_dashboard.html");
 		} else {
 		    // Incorrect login, show an error message and stay on the same login page
 		    out.print("Sorry username and password mismatch");

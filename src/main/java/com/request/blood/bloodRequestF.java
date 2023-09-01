@@ -91,15 +91,15 @@ try {
    
     int rowsInserted = pstmt.executeUpdate();
     if (rowsInserted > 0) {
-        System.out.println("Data inserted successfully.");
-
+    	RequestDispatcher rd=request.getRequestDispatcher("Requested.html");
+    	rd.include(request, response);
     } else {
         System.out.println("Data insertion failed.");
     }
     pstmt.close();
     conn.close();
 
-    response.getWriter().write("success");
+    RequestDispatcher rd=request.getRequestDispatcher("Requested.html");
 } catch (SQLException e) {
     e.printStackTrace();
     response.getWriter().write("Database error: " + e.getMessage());

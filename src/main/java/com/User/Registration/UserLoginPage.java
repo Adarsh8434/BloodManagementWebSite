@@ -12,14 +12,14 @@ public class UserLoginPage {
 		
 		
 		 try {
-             Class.forName("com.mysql.jdbc.Driver");
+             Class.forName("com.mysql.cj.jdbc.Driver");
          } catch (ClassNotFoundException e) {
              
          }
 		try {
         	
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/bloodmanagement", "root", "student");
-            PreparedStatement pstmt = conn.prepareStatement("select * from donorregistration where username=? AND password=? " );
+            PreparedStatement pstmt = conn.prepareStatement("select * from userregistration where username=? AND password=? " );
             pstmt.setString(1,username);
             pstmt.setString(2,password);
             ResultSet resultSet = pstmt.executeQuery();

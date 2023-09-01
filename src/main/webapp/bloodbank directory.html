@@ -98,7 +98,7 @@
         <div class="row">
             <div id="bblist">
                 <h5 align="left">
-                    <span id="latlon" class="label label-info toggle2">Loading List</span>
+                    <span id="latlon" class="label label-info toggle2"></span>
                 </h5>
                 <h5 align="left">
                     <span id="currentLocation" class="label label-info"></span>
@@ -997,8 +997,12 @@
             tableBody.innerHTML = ''; // Clear the existing rows
 
             var data = [
-                { SNo: 1, Name: 'District Hospital Balrampur Blood Centre', Address: 'Address 1', Phone: '1234567890', Email: 'email@example.com', Category: 'Government', Distance: '2.5', Type: 'Type 1' },
-                { SNo: 2, Name: 'Rajpur (BSU BMO, CHC)', Address: 'Address 2', Phone: '9876543210', Email: 'anotheremail@example.com', Category: 'Other', Distance: '4.2', Type: 'Type 2' },
+                { SNo: 1, Name: 'District Hospital Balrampur Blood Centre', Address: 'Aam Bagan sector 3', Phone: '9966551230', Email: 'BloodCenterBalramPur@gmail.com', Category: 'Government', Distance: '2.5', Type: 'Type 1' },
+                { SNo: 2, Name: 'Rajpur (BSU BMO, CHC)', Address: 'Near Basant Takies', Phone: '9876543210', Email: 'bloodbank@gmail.com', Category: 'Private', Distance: '4.2', Type: 'Type 2' },
+                 { SNo: 3, Name: 'Red cross Blood Centre', Address: 'Near Buddha Pest New Mall Road', Phone: '9024586856', Email: 'redcross@gmail.com', Category: 'Government', Distance: '5', Type: 'Type 1' },
+                { SNo: 4, Name: 'Charatable Blood Bank', Address: 'J Block, Sector 25', Phone: '07042840641', Email: 'Charatablebloodbank@gmail.com', Category: 'Private', Distance: '16.3', Type: 'Type 1' },
+                { SNo: 5, Name: 'Buddha Charitable Blood Bank', Address: ' Central Market, Vasundhara, Sector 2b', Phone: '7804289897', Email: 'buddhabloodbank@gmail.com', Category: 'Public', Distance: '20.2', Type: 'Type 2' },
+
             ];
 
             data.forEach(function (item) {
