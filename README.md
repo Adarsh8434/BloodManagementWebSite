@@ -39,7 +39,7 @@ MySQL
 
 Tools:
 
-Eclipse IDE
+Eclipse IDE/Vs Code
 
 Git & GitHub
 
